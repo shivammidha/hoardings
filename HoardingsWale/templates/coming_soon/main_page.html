@@ -1,0 +1,25 @@
+{% load staticfiles %}
+
+{% block static %}
+    <Title>Hoardings Wale</Title>
+    <link rel="stylesheet" type="text/css" href="{% static 'coming_soon/css/main.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <br>
+    <p class="serif">Hoardings Wale</p>
+    <br>
+    <p class="serif">We have hoardings for everyone</p>
+    <p class="access">Sign Up For Your Early Access Invite</p>
+    <br>
+    <div id="align">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.email_address }}
+            <input type="submit" value="Notify Me!!" style="background-color: dodgerblue;">
+        </form>
+        <p class="access">We promise to never spam you</p>
+    </div>
+    <br>
+    <p class="footer">@copyright 2015 Hoardingswale.com<p>
+{% endblock %}
